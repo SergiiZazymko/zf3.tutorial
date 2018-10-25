@@ -5,9 +5,13 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
+ ini_set('display_errors', 1);
+ error_reporting(E_ALL);
+
 return [
     // Additional modules to include when in development mode
     'modules' => [
+        'ZendDeveloperTools',
     ],
     // Configuration overrides during development mode
     'module_listener_options' => [

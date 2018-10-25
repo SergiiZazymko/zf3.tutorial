@@ -91,5 +91,4 @@ fabric.properties
 .idea/httpRequests
 
 /.idea/
-/.idea/php.xml
-/.idea/zf3.tutorial.iml
+.idea
