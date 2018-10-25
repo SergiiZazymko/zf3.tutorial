@@ -90,3 +90,6 @@ fabric.properties
 # Editor-based Rest Client
 .idea/httpRequests
 
+/.idea/
+/.idea/php.xml
+/.idea/zf3.tutorial.iml
