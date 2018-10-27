@@ -43,7 +43,11 @@
             "@development-enable"
         ],
         "serve": "php -S 0.0.0.0:1997 -t public public/index.php",
-        "test": "phpunit"
+        "test": [
+            "phpcs",
+            "phpcbf",
+            "phpunit"
+        ]
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.3",

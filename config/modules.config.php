@@ -1,4 +1,4 @@
-<?php 
+<?php
 return[
      'Zend\Router',
      'Zend\Validator',

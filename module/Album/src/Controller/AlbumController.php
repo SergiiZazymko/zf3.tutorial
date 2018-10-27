@@ -8,7 +8,6 @@
 
 namespace Album\Controller;
 
-
 use Album\Model\Album\AlbumRepository;
 use Stdlib\Db\Table;
 use Zend\Mvc\Controller\AbstractActionController;
@@ -36,21 +35,19 @@ class AlbumController extends AbstractActionController
     {
         var_dump($this->repository->fetchAll()->current());
         var_dump(Table::ALBUM);
-        echo __METHOD__;die;
+        echo __METHOD__;
+        die;
     }
 
     public function addAction()
     {
-        
     }
 
     public function editAction()
     {
-        
     }
 
     public function deleteAction()
     {
-        
     }
 }

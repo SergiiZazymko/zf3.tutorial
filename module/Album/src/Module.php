@@ -34,45 +34,45 @@ class Module implements ConfigProviderInterface
     /**
      * @return array
      */
-    public function getServiceCOnfig()
-    {
-        return [
-            'factories' => [
-                AlbumRepository::class => function($container) {
-                    /** @var AdapterInterface $adapter */
-                    $adapter = $container->get(AdapterInterface::class);
-
-                    /** @var ResultSet $resultSetPrototype */
-                    $resultSetPrototype = new ResultSet;
-                    $resultSetPrototype->setArrayObjectPrototype(new Model\Album\AlbumEntity);
-
-                    /** @var TableGatewayInterface $tableGateway */
-                    $tableGateway = new TableGateway(
-                        Table::ALBUM,
-                        $adapter,
-                        null,
-                        $resultSetPrototype
-                    );
-
-                    return new AlbumRepository($tableGateway);
-                },
-            ],
-        ];
-    }
+    //public function getServiceConfig()
+    //{
+    //    return [
+    //        'factories' => [
+    //            AlbumRepository::class => function($container) {
+    //                /** @var AdapterInterface $adapter */
+    //                $adapter = $container->get(AdapterInterface::class);
+    //
+    //                /** @var ResultSet $resultSetPrototype */
+    //                $resultSetPrototype = new ResultSet;
+    //                $resultSetPrototype->setArrayObjectPrototype(new Model\Album\AlbumEntity);
+    //
+    //                /** @var TableGatewayInterface $tableGateway */
+    //                $tableGateway = new TableGateway(
+    //                    Table::ALBUM,
+    //                    $adapter,
+    //                    null,
+    //                    $resultSetPrototype
+    //                );
+    //
+    //                return new AlbumRepository($tableGateway);
+    //            },
+    //        ],
+    //    ];
+    //}
 
     /**
      * @return array
      */
-    public function getControllerConfig()
-    {
-        return [
-            'factories' => [
-                AlbumController::class => function($container) {
-                    return new AlbumController(
-                        $container->get(AlbumRepository::class)
-                    );
-                },
-            ],
-        ];
-    }
+    //public function getControllerConfig()
+    //{
+    //    return [
+    //        'factories' => [
+    //            AlbumController::class => function($container) {
+    //                return new AlbumController(
+    //                    $container->get(AlbumRepository::class)
+    //                );
+    //            },
+    //        ],
+    //    ];
+    //}
 }
