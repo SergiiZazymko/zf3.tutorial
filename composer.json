@@ -17,12 +17,14 @@
         "zendframework/zend-mvc": "^3.0.1",
         "zfcampus/zf-development-mode": "^3.0",
         "zendframework/zend-test": "^3.0.1",
-        "ovimughal/zf3-module-creator": "dev-master"
+        "ovimughal/zf3-module-creator": "dev-master",
+        "zendframework/zend-db": "^2.9"
     },
     "autoload": {
         "psr-4": {
             "Application\\": "module/Application/src/",
-            "Album\\": "module/Album/src"
+            "Album\\": "module/Album/src",
+            "Stdlib\\": "module/Stdlib/src"
         }
     },
     "autoload-dev": {

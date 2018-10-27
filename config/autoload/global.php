@@ -12,5 +12,10 @@
  */
 
 return [
-    // ...
+    'db' => array(
+        'driver' => 'Pdo',
+        'dsn' => 'mysql:dbname=zf3_tutorial;host=localhost',
+        'user' => 'root',
+        'password' => 'root',
+    ),
 ];

@@ -1,14 +1,16 @@
 <?php 
- return[ 
-    'Zend\Router',
-    'Zend\Validator',
-    'Zend\Form',
-    'Zend\InputFilter',
-    'Zend\Hydrator',
-    'Zend\Filter',
-    'Zend\Serializer',
-    'Zend\I18n',
-    'Zend\Log',
-    'Application',
-    'Album'
+return[
+     'Zend\Router',
+     'Zend\Validator',
+     'Zend\Form',
+     'Zend\InputFilter',
+     'Zend\Hydrator',
+     'Zend\Filter',
+     'Zend\Serializer',
+     'Zend\I18n',
+     'Zend\Log',
+     'Zend\Db',
+     'Application',
+     'Album',
+     'Stdlib',
 ];

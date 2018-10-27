@@ -9,6 +9,8 @@
 namespace Album\Controller;
 
 
+use Album\Model\Album\AlbumRepository;
+use Stdlib\Db\Table;
 use Zend\Mvc\Controller\AbstractActionController;
 
 /**
@@ -17,5 +19,38 @@ use Zend\Mvc\Controller\AbstractActionController;
  */
 class AlbumController extends AbstractActionController
 {
+    /** @var AlbumRepository $repository */
+    protected $repository;
 
+    /**
+     * AlbumController constructor.
+     * @param AlbumRepository $repository
+     */
+    public function __construct(AlbumRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
+
+    public function indexAction()
+    {
+        var_dump($this->repository->fetchAll()->current());
+        var_dump(Table::ALBUM);
+        echo __METHOD__;die;
+    }
+
+    public function addAction()
+    {
+        
+    }
+
+    public function editAction()
+    {
+        
+    }
+
+    public function deleteAction()
+    {
+        
+    }
 }

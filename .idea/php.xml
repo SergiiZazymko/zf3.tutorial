@@ -78,6 +78,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/debug" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/ovimughal/zf3-module-creator" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-db" />
     </include_path>
   </component>
   <component name="PhpUnit">
