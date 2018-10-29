@@ -24,6 +24,7 @@
         "psr-4": {
             "Application\\": "module/Application/src/",
             "Album\\": "module/Album/src",
+            "Db\\": "module/Db/src",
             "Stdlib\\": "module/Stdlib/src"
         }
     },

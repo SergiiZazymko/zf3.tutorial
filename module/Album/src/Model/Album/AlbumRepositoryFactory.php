@@ -30,7 +30,7 @@ class AlbumRepositoryFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         /** @var AdapterInterface $adapter */
-        $adapter = $container->get(AdapterInterface::class);
+        $adapter = $container->get('zf3_db');
 
         /** @var ResultSet $resultSetPrototype */
         $resultSetPrototype = new ResultSet;

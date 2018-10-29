@@ -12,5 +12,6 @@ return[
      'Zend\Db',
      'Application',
      'Album',
+     'Db',
      'Stdlib',
 ];

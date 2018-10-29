@@ -35,7 +35,8 @@ return [
     ],
     'controllers' => [
         'factories' => [
-             Controller\AlbumController::class => AlbumControllerFactory::class,
+            // Controller\AlbumController::class => InvokableFactory::class,
+            Controller\AlbumController::class => AlbumControllerFactory::class,
         ],
     ],
     'service_manager' => [
