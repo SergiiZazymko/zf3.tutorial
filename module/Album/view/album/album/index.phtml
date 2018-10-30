@@ -28,8 +28,12 @@ $this->headScript()->prependFile('/assets/confirm.js');
             <td><?= $this->escapeHtml($album['title']); ?></td>
             <td><?= $this->escapeHtml($album['artist']); ?></td>
             <td>
-                <a href="<?= $this->url('album', ['action' => 'edit', 'id' => $album['id']]); ?>">Edit</a> |
-                <a href="<?= $this->url('album', ['action' => 'delete', 'id' => $album['id']]); ?>" class="delete" ">Delete</a>
+                <a href="<?= $this->url('album', ['action' => 'edit', 'id' => $album['id']]); ?>">
+                    Edit
+                </a> |
+                <a href="<?= $this->url('album', ['action' => 'delete', 'id' => $album['id']]); ?>" class="delete">
+                    Delete
+                </a>
             </td>
         </tr>
     <?php endforeach; ?>
