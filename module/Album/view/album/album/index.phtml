@@ -5,3 +5,32 @@
  * Date: 27.10.18
  * Time: 21:03
  */
+
+$title = 'My albums';
+$this->headTitle($title);
+$this->headScript()->prependFile('/assets/confirm.js');
+
+?>
+
+<h1><?= $this->escapeHtml($title); ?></h1>
+<a href="<?= $this->url('album', ['action' => 'add']); ?>">Add new album</a>
+<p>
+    <a href="<?= $this->url('album', ['action' => 'add']); ?>"></a>
+</p>
+
+<table class="table">
+    <th>Title</th>
+    <th>Artist</th>
+    <th>&nbsp;</th>
+
+    <?php foreach ($this->albums as $album): ?>
+        <tr>
+            <td><?= $this->escapeHtml($album['title']); ?></td>
+            <td><?= $this->escapeHtml($album['artist']); ?></td>
+            <td>
+                <a href="<?= $this->url('album', ['action' => 'edit', 'id' => $album['id']]); ?>">Edit</a> |
+                <a href="<?= $this->url('album', ['action' => 'delete', 'id' => $album['id']]); ?>" class="delete" ">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>

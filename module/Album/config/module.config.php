@@ -44,7 +44,9 @@ return [
             AlbumRepository::class => AlbumRepositoryFactory::class,
         ],
     ],
-    'template_path_stack' => [
-        'album' => __DIR__ . '/../view'
+    'view_manager' => [
+        'template_path_stack' => [
+            'album' => __DIR__ . '/../view',
+        ],
     ],
 ];

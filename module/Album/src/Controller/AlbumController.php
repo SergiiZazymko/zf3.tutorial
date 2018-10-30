@@ -11,6 +11,7 @@ namespace Album\Controller;
 use Album\Model\Album\AlbumRepository;
 use Stdlib\Db\Table;
 use Zend\Mvc\Controller\AbstractActionController;
+use Zend\View\Model\ViewModel;
 
 /**
  * Class AlbumController
@@ -30,13 +31,14 @@ class AlbumController extends AbstractActionController
         $this->repository = $repository;
     }
 
-
+    /**
+     * @return ViewModel
+     */
     public function indexAction()
     {
-        var_dump($this->repository->fetchAll()->current());
-        var_dump(Table::ALBUM);
-        echo __METHOD__;
-        die;
+        return new ViewModel([
+            'albums' => $this->repository->fetchAll(),
+        ]);
     }
 
     public function addAction()
