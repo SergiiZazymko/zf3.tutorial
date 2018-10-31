@@ -8,6 +8,7 @@
 
 namespace Album\Model\Album;
 
+use Db\Adapter\Zf3Adapter;
 use Interop\Container\ContainerInterface;
 use Interop\Container\Exception\ContainerException;
 use Stdlib\Db\Table;
@@ -30,7 +31,7 @@ class AlbumRepositoryFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         /** @var AdapterInterface $adapter */
-        $adapter = $container->get('zf3_db');
+        $adapter = $container->get(Zf3Adapter::class);
 
         /** @var ResultSet $resultSetPrototype */
         $resultSetPrototype = new ResultSet;

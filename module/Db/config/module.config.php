@@ -8,10 +8,12 @@
 
 namespace Db;
 
+use Db\Adapter\Zf3Adapter;
+
 return [
     'service_manager' => [
         'factories' => [
-            'zf3_db' => Factory\Zf3TutorialDbFactory::class,
+            Zf3Adapter::class => Factory\Zf3AdapterFactory::class,
         ],
     ],
 ];

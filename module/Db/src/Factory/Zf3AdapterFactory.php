@@ -9,25 +9,26 @@
 namespace Db\Factory;
 
 
+use Db\Adapter\Zf3Adapter;
 use Interop\Container\ContainerInterface;
 use Zend\Db\Adapter\Adapter;
 use Zend\Db\Adapter\AdapterServiceFactory;
 
 /**
- * Class Zf3TutorialDbFactory
+ * Class Zf3AdapterFactory
  * @package Db\Factory
  */
-class Zf3TutorialDbFactory extends AdapterServiceFactory
+class Zf3AdapterFactory extends AdapterServiceFactory
 {
     /**
      * @param ContainerInterface $container
      * @param string $requestedName
      * @param array|null $options
-     * @return Adapter
+     * @return Zf3Adapter|Adapter
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $config = $container->get('config');
-        return new Adapter($config['zf3_db']);
+        return new Zf3Adapter($config['zf3_db']);
     }
 }
