@@ -12,10 +12,10 @@
  */
 
 return [
-    'zf3_db' => [
-        'driver' => 'Pdo',
-        'dsn' => 'mysql:dbname=zf3_tutorial;host=localhost',
-        'user' => 'root',
-        'password' => 'root',
-    ],
+//    'zf3_db' => [
+//        'driver' => 'Pdo',
+//        'dsn' => 'mysql:dbname=zf3_tutorial;host=localhost',
+//        'user' => 'root',
+//        'password' => '1',
+//    ],
 ];
