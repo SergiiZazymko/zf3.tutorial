@@ -23,7 +23,7 @@ return [
                     'route' => '/album[/:action[/:id]]',
                     'constraints' => [
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id' => '\d',
+                        'id' => '\d+',
                     ],
                     'defaults' => [
                         'controller' => Controller\AlbumController::class,
