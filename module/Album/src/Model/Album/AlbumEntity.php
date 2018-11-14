@@ -32,7 +32,7 @@ class AlbumEntity extends \ArrayObject implements InputFilterAwareInterface
     public function setInputFilter(InputFilterInterface $inputFilter)
     {
         throw new \DomainException(sprintf(
-            '$s does not allow injection of alternate input filter',
+            '%s does not allow injection of alternate input filter',
             __CLASS__
         ));
     }

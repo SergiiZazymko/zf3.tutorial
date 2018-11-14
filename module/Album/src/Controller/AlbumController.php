@@ -68,6 +68,7 @@ class AlbumController extends AbstractActionController
         $album = new AlbumEntity;
         $form->setInputFilter($album->getInputFilter());
         $form->setData($request->getPost());
+        $form->bind($album);
 
         if (! $form->isValid()) {
             return [
@@ -75,7 +76,7 @@ class AlbumController extends AbstractActionController
             ];
         }
 
-        $album->exchangeArray($form->getData());
+        //$album->exchangeArray($form->getData());
         $this->repository->saveAlbum($album);
 
         return $this->redirect()->toRoute('album');
