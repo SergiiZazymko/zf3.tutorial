@@ -14,4 +14,5 @@ return[
      'Album',
      'Db',
      'Stdlib',
+     'Word',
 ];

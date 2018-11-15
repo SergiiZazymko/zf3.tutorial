@@ -17,13 +17,15 @@
         "zendframework/zend-mvc": "^3.0.1",
         "zfcampus/zf-development-mode": "^3.0",
         "ovimughal/zf3-module-creator": "dev-master",
-        "zendframework/zend-db": "^2.9"
+        "zendframework/zend-db": "^2.9",
+        "phpoffice/phpword": "v0.14.*"
     },
     "autoload": {
         "psr-4": {
             "Application\\": "module/Application/src/",
             "Album\\": "module/Album/src",
             "Db\\": "module/Db/src",
+            "Word\\": "module/Word/src",
             "Stdlib\\": "module/Stdlib/src"
         }
     },
