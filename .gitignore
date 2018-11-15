@@ -92,3 +92,4 @@ fabric.properties
 
 /.idea/
 .idea
+!/phpunit.xml

@@ -8,7 +8,6 @@
 
 namespace Db\Factory;
 
-
 use Db\Adapter\Zf3Adapter;
 use Interop\Container\ContainerInterface;
 use Zend\Db\Adapter\Adapter;

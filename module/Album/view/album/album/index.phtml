@@ -23,7 +23,7 @@ $this->headScript()->prependFile('/assets/confirm.js');
     <th>Artist</th>
     <th>&nbsp;</th>
 
-    <?php foreach ($this->albums as $album): ?>
+    <?php foreach ($this->albums as $album) : ?>
         <tr>
             <td><?= $this->escapeHtml($album['title']); ?></td>
             <td><?= $this->escapeHtml($album['artist']); ?></td>

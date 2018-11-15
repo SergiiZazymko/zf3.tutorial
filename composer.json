@@ -16,7 +16,6 @@
         "zendframework/zend-component-installer": "^1.0 || ^0.7 || ^1.0.0-dev@dev",
         "zendframework/zend-mvc": "^3.0.1",
         "zfcampus/zf-development-mode": "^3.0",
-        "zendframework/zend-test": "^3.0.1",
         "ovimughal/zf3-module-creator": "dev-master",
         "zendframework/zend-db": "^2.9"
     },
@@ -30,7 +29,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "ApplicationTest\\": "module/Application/test/"
+            "ApplicationTest\\": "module/Application/test/",
+            "AlbumTest\\": "module/Album/test/"
         }
     },
     "extra": [],
@@ -47,13 +47,17 @@
         "test": [
             "phpcs",
             "phpcbf",
-            "phpunit"
-        ]
+            "phpunit --colors=always"
+        ],
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+        "upload-coverage": "coveralls -v"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.3",
         "zendframework/zend-developer-tools": "^1.2",
         "phpunit/phpunit": "^6.5",
-        "zendframework/zftool": "dev-master"
+        "zendframework/zftool": "dev-master",
+        "zendframework/zend-test": "^3.2",
+        "php-coveralls/php-coveralls": "^2.1"
     }
 }

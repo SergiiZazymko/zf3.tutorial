@@ -8,7 +8,6 @@
 
 namespace Album\Form;
 
-
 use Zend\Form\Element\Hidden;
 use Zend\Form\Element\Submit;
 use Zend\Form\Element\Text;
@@ -60,6 +59,5 @@ class AlbumForm extends Form
                     'id' => 'submitbutton',
                 ],
             ]);
-
     }
 }

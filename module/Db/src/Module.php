@@ -8,7 +8,6 @@
 
 namespace Db;
 
-
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 
 /**

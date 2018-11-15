@@ -8,7 +8,6 @@
 
 namespace Db\Adapter;
 
-
 use Zend\Db\Adapter\Adapter;
 
 /**

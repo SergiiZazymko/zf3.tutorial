@@ -98,7 +98,7 @@ class AlbumRepository
     public function deleteAlbum($id)
     {
         return $this->tableGateway->delete([
-            'id'=> intval($id),
+            'id' => intval($id),
         ]);
     }
 }

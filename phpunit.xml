@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<phpunit
+        bootstrap="Bootstrap.php"
+        colors="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        verbose="true"
+        stopOnFailure="false"
+        processIsolation="false"
+        backupGlobals="false"
+        syntaxCheck="true">
+    <testsuites>
+        <!--<testsuite name="ZendSkeletonApplication Test Suite">-->
+        <!--<directory>./module/Application/test</directory>-->
+        <!--</testsuite>-->
+        <testsuite name="Album">
+            <directory>./module/Album/test</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log type="coverage-html"
+             target="./data/logs/report/index.html"
+             charset="UTF-8"
+             yui="true"
+             highlight="true"
+             lowUpperBound="50"
+             highLowerBound="80"/>
+        <log type="testdox-html"
+             target="./data/logs/testdox.html"/>
+    </logging>
+</phpunit>

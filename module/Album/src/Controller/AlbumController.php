@@ -127,7 +127,7 @@ class AlbumController extends AbstractActionController
 
         $this->repository->saveAlbum($album);
 
-        return $this->redirect()->toRoute('album', ['action' => 'index']);
+        return $this->redirect()->toRoute('album');
     }
 
     /**
