@@ -18,7 +18,7 @@ return [
                 'options' => [
                     'route' => '/word',
                     'defaults' => [
-                        'controller' => Controller\WordController::class,
+                        'controller' => WordController::class,
                         'action' => 'index'
                     ],
                 ],
@@ -29,11 +29,10 @@ return [
         'router' => [
             'routes' => [
                 'word' => [
-                    'type' => Literal::class,
                     'options' => [
                         'route' => 'word',
                         'defaults' => [
-                            'controller' => Controller\WordController::class,
+                            'controller' => WordController::class,
                             'action' => 'index'
                         ],
                     ],
@@ -44,6 +43,14 @@ return [
     'controllers' => [
         'factories' => [
             WordController::class => InvokableFactory::class,
+        ],
+    ],
+    'view_manager' => [
+        'template_path_stack' => [
+            'word' => __DIR__ . '/../view',
+        ],
+        'strategies' => [
+            'ViewJsonStrategy',
         ],
     ],
 ];

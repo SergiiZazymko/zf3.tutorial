@@ -6,6 +6,8 @@
 
 namespace Word;
 
+use Zend\Console\Adapter\AdapterInterface;
+use Zend\Console\Console;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 
 /**
@@ -20,5 +22,16 @@ class Module implements ConfigProviderInterface
     public function getConfig()
     {
         return include __DIR__ . '/../config/module.config.php';
+    }
+
+    /**
+     * @param AdapterInterface $console
+     * @return array
+     */
+    public function getConsoleUsage(Console $console)
+    {
+        return [
+            'word' => 'Generate word file from template',
+        ];
     }
 }
