@@ -19,7 +19,9 @@
         "ovimughal/zf3-module-creator": "dev-master",
         "zendframework/zend-db": "^2.9",
         "phpoffice/phpword": "v0.14.*",
-        "zendframework/zend-navigation": "^2.9"
+        "zendframework/zend-navigation": "^2.9",
+        "zendframework/zend-console": "^2.7",
+        "zendframework/zend-mvc-console": "^1.2"
     },
     "autoload": {
         "psr-4": {

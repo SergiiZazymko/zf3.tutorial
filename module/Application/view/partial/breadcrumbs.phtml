@@ -6,10 +6,10 @@
 ?>
 
 <ul class="breadcrumb">
-    <?php foreach ($this->pages as $key => $page): ?>
-        <?php if ($key < count($this->pages) - 1): ?>
+    <?php foreach ($this->pages as $key => $page) : ?>
+        <?php if ($key < count($this->pages) - 1) : ?>
             <a href="<?= $page->getHref(); ?>"><?= $page->getLabel(); ?></a> |
-        <?php else: ?>
+        <?php else : ?>
             <?= $page->getLabel(); ?>
         <?php endif; ?>
     <?php endforeach; ?>

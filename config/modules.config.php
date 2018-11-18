@@ -11,6 +11,7 @@ return[
     'Zend\Log',
     'Zend\Db',
     'Zend\Navigation',
+    'Zend\Mvc\Console',
     'Application',
     'Album',
     'Db',

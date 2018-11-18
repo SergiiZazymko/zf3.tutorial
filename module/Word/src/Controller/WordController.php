@@ -23,6 +23,8 @@ class WordController extends AbstractActionController
      */
     public function indexAction()
     {
+        echo __METHOD__;
+        die;
         $templateProcessor = new TemplateProcessor('./data/word/Hello.docx');
         $templateProcessor->setValue('Name', 'John Doe');
         $templateProcessor->saveAs('./data/word/hello_3.docx');
