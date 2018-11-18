@@ -11,6 +11,7 @@
 return [
     // Additional modules to include when in development mode
     'modules' => [
+        'Zend\Navigation',
         'ZendDeveloperTools',
     ],
     // Configuration overrides during development mode

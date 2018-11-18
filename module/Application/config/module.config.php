@@ -57,4 +57,38 @@ return [
             __DIR__ . '/../view',
         ],
     ],
+    'navigation' => [
+        'default' => [
+            [
+                'label' => 'Home',
+                'title' => 'Home page of application',
+                'route' => 'home',
+            ],
+            [
+                'label' => 'Album',
+                'title' => 'List of all albums',
+                'route' => 'album',
+                'pages' => [
+                    [
+                        'label' => 'Add',
+                        'title' => 'Add new album',
+                        'route' => 'album',
+                        'action' => 'add',
+                    ],
+                    [
+                        'label' => 'Edit',
+                        'title' => 'Edit album',
+                        'route' => 'album',
+                        'action' => 'edit',
+                    ],
+                    [
+                        'label' => 'Delete',
+                        'title' => 'Delete album',
+                        'route' => 'album',
+                        'action' => 'delete',
+                    ],
+                ],
+            ],
+        ],
+    ],
 ];
