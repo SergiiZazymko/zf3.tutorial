@@ -1,0 +1,16 @@
+<?php
+/**
+ * @access protected
+ * @author Sergiy Zazymko <sergiy.zazymko@gns-it.com>
+ */
+?>
+
+<ul class="breadcrumb">
+    <?php foreach ($this->pages as $key => $page): ?>
+        <?php if ($key < count($this->pages) - 1): ?>
+            <a href="<?= $page->getHref(); ?>"><?= $page->getLabel(); ?></a> |
+        <?php else: ?>
+            <?= $page->getLabel(); ?>
+        <?php endif; ?>
+    <?php endforeach; ?>
+</ul>

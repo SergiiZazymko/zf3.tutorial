@@ -57,6 +57,7 @@ return [
             __DIR__ . '/../view',
         ],
     ],
+
     'navigation' => [
         'default' => [
             [
@@ -88,6 +89,11 @@ return [
                         'action' => 'delete',
                     ],
                 ],
+            ],
+            [
+                'label' => 'Word',
+                'Title' => 'Download word template',
+                'route' => 'word',
             ],
         ],
     ],

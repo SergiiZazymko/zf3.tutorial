@@ -1,3 +1,9 @@
+<?php
+/** @var \Zend\Navigation\Page\Mvc $page */
+$page = $this->navigation('default')
+    ->findOneBy('active', 1);
+?>
+
 <?= $this->doctype() ?>
 
 <html lang="en">
@@ -36,6 +42,7 @@
                         <img src="<?= $this->basePath('img/zf-logo-mark.svg') ?>" height="28" alt="Zend Framework <?= \Application\Module::VERSION ?>"/>&nbsp;Skeleton Application
                     </a>
                 </div>
+
                 <div class="collapse navbar-collapse">
                     <?= $this->navigation('navigation')
                         ->menu()
@@ -51,9 +58,15 @@
         </nav>
 
         <div class="container">
-            <?= $this->navigation('navigation')
+            <?= $this->navigation('default')
                 ->breadcrumbs()
-                ->setMinDepth(0); ?>
+                ->setMinDepth(0)
+                ->setPartial('partial/breadcrumbs'); ?>
+            <div class="page-header">
+                <div class="page-title">
+                    <h3><?= $page->getLabel(); ?> <small><?= $page->getTitle(); ?></small></h3>
+                </div>
+            </div>
             <?= $this->content ?>
             <hr>
             <footer>
