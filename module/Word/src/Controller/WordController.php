@@ -23,8 +23,11 @@ class WordController extends AbstractActionController
      */
     public function indexAction()
     {
-        echo __METHOD__;
-        die;
+        if ($this->request instanceof \Zend\Console\Request) {
+            echo __METHOD__ . "\n";
+            die();
+        }
+        /** @var TemplateProcessor $templateProcessor */
         $templateProcessor = new TemplateProcessor('./data/word/Hello.docx');
         $templateProcessor->setValue('Name', 'John Doe');
         $templateProcessor->saveAs('./data/word/hello_3.docx');
@@ -34,7 +37,6 @@ class WordController extends AbstractActionController
 
         /** @var ResponseInterface $response */
         $response = $this->getEvent()->getResponse();
-
         $response->getHeaders()->addHeaders([
             'Content-Disposition' => 'attachment;filename="'. 'hello_3.docx' .'"',
             'Content-Type' => 'application/msword; charset=UTF-8',
