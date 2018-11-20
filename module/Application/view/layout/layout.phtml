@@ -22,7 +22,7 @@ $page = $this->navigation('default')
             ->prependStylesheet($this->basePath('css/style.css'))
             ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
             ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
-?>
+        ?>
 
         <!-- Scripts -->
         <?= $this->headScript()
@@ -50,7 +50,8 @@ $page = $this->navigation('default')
                         ->menu()
                         ->setMinDepth(0)
                         ->setMaxDepth(0)
-                        ->setUlClass('nav navbar-nav'); ?>
+                        ->setUlClass('nav navbar-nav')
+                    ?>
 <!--                    <ul class="nav navbar-nav">-->
 <!--                        <li class="active"><a href="--><?php //= $this->url('home') ?><!--">Home</a></li>-->
 <!--                        <li class="active"><a href="--><?php //= $this->url('album') ?><!--">Album</a></li>-->
@@ -63,7 +64,8 @@ $page = $this->navigation('default')
             <?= $this->navigation('default')
                 ->breadcrumbs()
                 ->setMinDepth(0)
-                ->setPartial('partial/breadcrumbs'); ?>
+                ->setPartial('partial/breadcrumbs')
+            ?>
             <div class="page-header">
                 <div class="page-title">
                     <h3><?php //= $page->getLabel(); ?> <small><?php //= $page->getTitle(); ?></small></h3>
