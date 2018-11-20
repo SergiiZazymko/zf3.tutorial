@@ -10,6 +10,7 @@ namespace Album\Model\Album;
 
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGatewayInterface;
+use Zend\Paginator\Paginator;
 
 /**
  * Class AlbumRepository
@@ -24,9 +25,10 @@ class AlbumRepository
      * AlbumRepository constructor.
      * @param TableGatewayInterface $tableGateway
      */
-    public function __construct(TableGatewayInterface $tableGateway)
+    public function __construct(TableGatewayInterface $tableGateway, $collectionClass)
     {
         $this->tableGateway = $tableGateway;
+        $this->collectionClass = $collectionClass;
     }
 
     /**
@@ -34,6 +36,7 @@ class AlbumRepository
      */
     public function fetchAll()
     {
+        var_dump($this->collectionClass);die;
         return $this->tableGateway->select();
     }
 
@@ -100,5 +103,13 @@ class AlbumRepository
         return $this->tableGateway->delete([
             'id' => intval($id),
         ]);
+    }
+
+    /**
+     * @return TableGatewayInterface
+     */
+    public function getTableGateway()
+    {
+        return $this->tableGateway;
     }
 }

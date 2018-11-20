@@ -21,7 +21,8 @@
         "phpoffice/phpword": "v0.14.*",
         "zendframework/zend-navigation": "^2.9",
         "zendframework/zend-console": "^2.7",
-        "zendframework/zend-mvc-console": "^1.2"
+        "zendframework/zend-mvc-console": "^1.2",
+        "zendframework/zend-paginator": "^2.8"
     },
     "autoload": {
         "psr-4": {

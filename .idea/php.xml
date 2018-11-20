@@ -94,6 +94,7 @@
       <path value="$PROJECT_DIR$/vendor/pclzip/pclzip" />
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-navigation" />
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-mvc-console" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-paginator" />
     </include_path>
   </component>
   <component name="PhpUnit">

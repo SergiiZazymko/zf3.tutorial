@@ -45,6 +45,9 @@ class AlbumRepositoryFactory implements FactoryInterface
             $resultSetPrototype
         );
 
-        return new AlbumRepository($tableGateway);
+        return new AlbumRepository(
+            $tableGateway,
+            AlbumCollection::class
+        );
     }
 }

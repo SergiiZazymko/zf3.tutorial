@@ -12,6 +12,7 @@ return[
     'Zend\Db',
     'Zend\Navigation',
     'Zend\Mvc\Console',
+    'Zend\Paginator',
     'Application',
     'Album',
     'Db',

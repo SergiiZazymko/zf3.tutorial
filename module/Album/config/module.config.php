@@ -9,6 +9,7 @@
 namespace Album;
 
 use Album\Controller\AlbumControllerFactory;
+use Album\Controller\DbControllerFactory;
 use Album\Model\Album\AlbumRepository;
 use Album\Model\Album\AlbumRepositoryFactory;
 use Zend\Router\Http\Segment;
@@ -31,12 +32,26 @@ return [
                     ],
                 ],
             ],
+            'db' => [
+                'type' => Segment::class,
+                'options' => [
+                    'route' => '/db/:action',
+                    'constraints' => [
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                    ],
+                    'defaults' => [
+                        'controller' => Controller\DbController::class,
+                        //'action' => 'index',
+                    ],
+                ],
+            ],
         ],
     ],
     'controllers' => [
         'factories' => [
             // Controller\AlbumController::class => InvokableFactory::class,
             Controller\AlbumController::class => AlbumControllerFactory::class,
+            Controller\DbController::class => DbControllerFactory::class,
         ],
     ],
     'service_manager' => [
