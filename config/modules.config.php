@@ -13,6 +13,8 @@ return[
     'Zend\Navigation',
     'Zend\Mvc\Console',
     'Zend\Paginator',
+    'DoctrineModule',
+    'DoctrineORMModule',
     'Application',
     'Album',
     'Db',

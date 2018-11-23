@@ -16,6 +16,12 @@ use Zend\View\Model\JsonModel;
  */
 class WordController extends AbstractActionController
 {
+    /** @var string $input */
+    protected $input = './data/word/order_LOCKED.docx';
+
+    /** @var string $output*/
+    protected $output = './data/word/output.docx';
+
     /**
      * @return JsonModel|\Zend\View\Model\ViewModel
      * @throws \PhpOffice\PhpWord\Exception\CopyFileException
@@ -23,25 +29,39 @@ class WordController extends AbstractActionController
      */
     public function indexAction()
     {
+        // If this is called from console
         if ($this->request instanceof \Zend\Console\Request) {
             echo __METHOD__ . "\n";
             die();
         }
         /** @var TemplateProcessor $templateProcessor */
-        $templateProcessor = new TemplateProcessor('./data/word/Hello.docx');
-        $templateProcessor->setValue('Name', 'John Doe');
-        $templateProcessor->saveAs('./data/word/hello_3.docx');
+        $templateProcessor = new TemplateProcessor($this->input);
+        $templateProcessor->setValue('blankid', '1000001');
+        $templateProcessor->setValue('orderseries', 'CO');
+        $templateProcessor->setValue('ordernumber', '1000001');
+        $templateProcessor->setValue('advcatefullname', 'Рамаданова Галина Степанівна');
+        $templateProcessor->setValue('certnum', '6/6');
+        $templateProcessor->setValue('certat_day', '02');
+        $templateProcessor->setValue('certat_month', '12');
+        $templateProcessor->setValue('certat_year', '2004');
+        $templateProcessor->setValue('certcalc_region', 'Кіровоградської');
+        $templateProcessor->setValue('regnum', '1');
+        $templateProcessor->setValue('regat_day', '30');
+        $templateProcessor->setValue('regat_month', '12');
+        $templateProcessor->setValue('regat_year', '1993');
+        $templateProcessor->setValue('regcalc_region', 'Волинської');
+        $templateProcessor->saveAs($this->output);
 
         /** @var string $data */
-        $data = file_get_contents(realpath('./data/word/hello_3.docx'));
+        $data = file_get_contents(realpath($this->output));
 
         /** @var ResponseInterface $response */
         $response = $this->getEvent()->getResponse();
         $response->getHeaders()->addHeaders([
-            'Content-Disposition' => 'attachment;filename="'. 'hello_3.docx' .'"',
+            'Content-Disposition' => 'attachment;filename="'. basename($this->output) .'"',
             'Content-Type' => 'application/msword; charset=UTF-8',
             'Content-Transfer-Encoding' => 'binary',
-            'Content-Length: ' . filesize('./data/word/hello_3.docx'),
+            'Content-Length: ' . filesize($this->output),
             'Cache-Control' => 'must-revalidate',
             'Pragma' => 'public',
         ]);

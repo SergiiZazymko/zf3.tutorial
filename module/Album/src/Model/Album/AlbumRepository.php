@@ -36,7 +36,6 @@ class AlbumRepository
      */
     public function fetchAll()
     {
-        var_dump($this->collectionClass);die;
         return $this->tableGateway->select();
     }
 
