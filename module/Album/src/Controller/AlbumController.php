@@ -13,6 +13,7 @@ use Album\Model\Album\AlbumEntity;
 use Album\Model\Album\AlbumRepository;
 use Zend\Http\Request;
 use Zend\Mvc\Controller\AbstractActionController;
+use Zend\Paginator\Paginator;
 use Zend\View\Model\ViewModel;
 
 /**
@@ -21,6 +22,9 @@ use Zend\View\Model\ViewModel;
  */
 class AlbumController extends AbstractActionController
 {
+    /** @const int ITEM_COUNT_PER_PAGE */
+    const ITEM_COUNT_PER_PAGE = 10;
+
     /** @var AlbumRepository $repository */
     protected $repository;
 
@@ -38,8 +42,18 @@ class AlbumController extends AbstractActionController
      */
     public function indexAction()
     {
+        /** @var Paginator $paginator */
+        $paginator = $this->repository->fetchAll(true);
+
+        /** @var int $page */
+        $page = $this->params()->fromQuery('page', 1);
+        $page = $page < 1 ? 1 : $page;
+
+        $paginator->setCurrentPageNumber($page);
+        $paginator->setItemCountPerPage(self::ITEM_COUNT_PER_PAGE);
+
         return new ViewModel([
-            'albums' => $this->repository->fetchAll(),
+            'paginator' => $paginator,
         ]);
     }
 

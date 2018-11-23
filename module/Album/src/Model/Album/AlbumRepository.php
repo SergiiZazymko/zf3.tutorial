@@ -9,7 +9,10 @@
 namespace Album\Model\Album;
 
 use Zend\Db\ResultSet\ResultSet;
+use Zend\Db\ResultSet\ResultSetInterface;
+use Zend\Db\Sql\Select;
 use Zend\Db\TableGateway\TableGatewayInterface;
+use Zend\Paginator\Adapter\DbSelect;
 use Zend\Paginator\Paginator;
 
 /**
@@ -20,6 +23,9 @@ class AlbumRepository
 {
     /** @var TableGatewayInterface */
     protected $tableGateway;
+
+    /** @var string $collectionClass */
+    protected $collectionClass;
 
     /**
      * AlbumRepository constructor.
@@ -34,9 +40,33 @@ class AlbumRepository
     /**
      * @return mixed
      */
-    public function fetchAll()
+    public function fetchAll($paginated = false)
     {
+        if ($paginated) {
+            return $this->fetchPaginated();
+        }
         return $this->tableGateway->select();
+    }
+
+    /**
+     * @return mixed
+     */
+    protected function fetchPaginated()
+    {
+        /** @var Select $select */
+        $select = new Select($this->tableGateway->getTable());
+
+        /** @var ResultSetInterface $resultSetPrototype */
+        $resultSetPrototype = new ResultSet;
+        $resultSetPrototype->setArrayObjectPrototype(new AlbumEntity);
+
+        $adapter = new DbSelect(
+            $select,
+            $this->tableGateway->getAdapter(),
+            $resultSetPrototype
+        );
+
+        return new $this->collectionClass($adapter);
     }
 
     /**
