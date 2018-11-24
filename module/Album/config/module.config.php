@@ -8,12 +8,14 @@
 
 namespace Album;
 
+use Album\Controller\DbController;
 use Album\Controller\DbControllerFactory;
 use Album\Factory\AlbumControllerFactory;
 use Album\Factory\AlbumDoctrineControllerFactory;
 use Album\Initializer\EntityManagerInitializer;
 use Album\Model\Album\AlbumRepository;
 use Album\Model\Album\AlbumRepositoryFactory;
+use Album\View\Helper\ShowMessages;
 use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
@@ -63,6 +65,21 @@ return [
             ],
         ],
     ],
+    'console' => [
+        'router' => [
+            'routes' => [
+                'db' => [
+                    'options' => [
+                        'route' => 'db',
+                        'defaults' => [
+                            'controller' => DbController::class,
+                            'action' => 'add'
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
     'controllers' => [
         'factories' => [
             // Controller\AlbumController::class => InvokableFactory::class,
@@ -83,6 +100,11 @@ return [
     'view_manager' => [
         'template_path_stack' => [
             'album' => __DIR__ . '/../view',
+        ],
+    ],
+    'view_helpers' => [
+        'invokables' => [
+            'showMessages' => ShowMessages::class,
         ],
     ],
     'doctrine' => array(

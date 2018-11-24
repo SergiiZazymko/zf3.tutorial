@@ -7,7 +7,6 @@
 
 namespace Application;
 
-use Album\Initializer\EntityManagerInitializer;
 use Zend\Router\Http\Literal;
 use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
@@ -41,7 +40,6 @@ return [
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
         ],
-
     ],
     'view_manager' => [
         'display_not_found_reason' => true,
@@ -59,7 +57,11 @@ return [
             __DIR__ . '/../view',
         ],
     ],
-
+    'view_helpers' => [
+        'invokables' => [
+            'showMessages' => \Album\View\Helper\ShowMessages::class,
+        ],
+    ],
     'navigation' => [
         'default' => [
             [
@@ -100,19 +102,19 @@ return [
                     [
                         'label' => 'Add',
                         'title' => 'Add new album',
-                        'route' => 'album',
+                        'route' => 'album-doctrine',
                         'action' => 'add',
                     ],
                     [
                         'label' => 'Edit',
                         'title' => 'Edit album',
-                        'route' => 'album',
+                        'route' => 'album-doctrine',
                         'action' => 'edit',
                     ],
                     [
                         'label' => 'Delete',
                         'title' => 'Delete album',
-                        'route' => 'album',
+                        'route' => 'album-doctrine',
                         'action' => 'delete',
                     ],
                 ],

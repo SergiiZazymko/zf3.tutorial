@@ -11,11 +11,11 @@ $this->headTitle($title);
 $this->headScript()->prependFile('/assets/confirm.js');
 
 ?>
-
+<?= $this->showMessages(); ?>
 <h1><?= $this->escapeHtml($title); ?></h1>
-<a href="<?= $this->url('album', ['action' => 'add']); ?>">Add new album</a>
+<a href="<?= $this->url('album-doctrine', ['action' => 'add']); ?>">Add new album</a>
 <p>
-    <a href="<?= $this->url('album', ['action' => 'add']); ?>"></a>
+    <a href="<?= $this->url('album-doctrine', ['action' => 'add']); ?>"></a>
 </p>
 
 <table class="table">
@@ -30,10 +30,10 @@ $this->headScript()->prependFile('/assets/confirm.js');
             <td><?= $this->escapeHtml($album->getTitle()); ?></td>
             <td><?= $this->escapeHtml($album->getArtist()); ?></td>
             <td>
-                <a href="<?= $this->url('album', ['action' => 'edit', 'id' => $album->getId()]); ?>">
+                <a href="<?= $this->url('album-doctrine', ['action' => 'edit', 'id' => $album->getId()]); ?>">
                     Edit
                 </a> |
-                <a href="<?= $this->url('album', ['action' => 'delete', 'id' => $album->getId()]); ?>" class="delete">
+                <a href="<?= $this->url('album-doctrine', ['action' => 'delete', 'id' => $album->getId()]); ?>" class="delete">
                     Delete
                 </a>
             </td>

@@ -13,6 +13,7 @@ return[
     'Zend\Navigation',
     'Zend\Mvc\Console',
     'Zend\Paginator',
+    'Zend\Mvc\Plugin\FlashMessenger',
     'DoctrineModule',
     'DoctrineORMModule',
     'Application',

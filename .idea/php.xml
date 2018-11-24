@@ -112,6 +112,8 @@
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-cache" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-orm-module" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-module" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-session" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-mvc-plugin-flashmessenger" />
     </include_path>
   </component>
   <component name="PhpUnit">

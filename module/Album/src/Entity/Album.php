@@ -6,7 +6,11 @@
 
 namespace Album\Entity;
 
+use Album\Model\BindableInterface;
+use Album\Traits\AlbumInputFilterAwareTrait;
+use Album\Traits\BindingAwareTrait;
 use Doctrine\ORM\Mapping as ORM;
+use Zend\InputFilter\InputFilterAwareInterface;
 
 /**
  * Class Album
@@ -15,8 +19,11 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="album")
  */
-class Album
+class Album implements BindableInterface, InputFilterAwareInterface
 {
+    use BindingAwareTrait;
+    use AlbumInputFilterAwareTrait;
+
     /**
      * @var integer
      *

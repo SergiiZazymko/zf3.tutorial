@@ -34,7 +34,6 @@ class DbController extends AbstractActionController
      */
     public function addAction()
     {
-        die;
         /** @var AdapterInterface $adapter */
         $adapter = $this->repository->getTableGateway()->getAdapter();
 
@@ -45,6 +44,6 @@ class DbController extends AbstractActionController
         $statement = $adapter->query($sql);
         $statement->execute();
 
-        die('success');
+        die("success\n");
     }
 }
