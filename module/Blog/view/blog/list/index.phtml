@@ -1,0 +1,14 @@
+<?php
+/**
+ * @access protected
+ * @author Sergiy Zazymko <sergiy.zazymko@gns-it.com>
+ */
+?>
+
+<?php /** @var \Blog\Model\PostEntity $post */
+foreach ($this->posts as $post): ?>
+    <article>
+        <h3><?= $post->getId(); ?> <?= $post->getTitle(); ?></h3>
+        <p><?= $post->getText(); ?></p>
+    </article>
+<?php endforeach; ?>

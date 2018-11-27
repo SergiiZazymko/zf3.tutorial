@@ -18,6 +18,7 @@ return[
     'DoctrineORMModule',
     'Application',
     'Album',
+    'Blog',
     'Db',
     'Stdlib',
     'Word',

@@ -60,6 +60,7 @@ class AlbumRepository
         $resultSetPrototype = new ResultSet;
         $resultSetPrototype->setArrayObjectPrototype(new AlbumEntity);
 
+        /** @var DbSelect $adapter */
         $adapter = new DbSelect(
             $select,
             $this->tableGateway->getAdapter(),

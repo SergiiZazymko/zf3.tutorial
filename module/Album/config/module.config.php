@@ -11,7 +11,6 @@ namespace Album;
 use Album\Controller\DbController;
 use Album\Controller\DbControllerFactory;
 use Album\Factory\AlbumControllerFactory;
-use Album\Factory\AlbumDoctrineControllerFactory;
 use Album\Initializer\EntityManagerInitializer;
 use Album\Model\Album\AlbumRepository;
 use Album\Model\Album\AlbumRepositoryFactory;
@@ -84,7 +83,7 @@ return [
         'factories' => [
             // Controller\AlbumController::class => InvokableFactory::class,
             Controller\AlbumController::class => AlbumControllerFactory::class,
-            Controller\AlbumDoctrineController::class => AlbumDoctrineControllerFactory::class,
+            // Controller\AlbumDoctrineController::class => AlbumDoctrineControllerFactory::class,
             Controller\AlbumDoctrineController::class => InvokableFactory::class,
             Controller\DbController::class => DbControllerFactory::class,
         ],

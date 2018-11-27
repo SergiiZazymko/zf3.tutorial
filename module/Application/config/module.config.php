@@ -68,11 +68,13 @@ return [
                 'label' => 'Home',
                 'title' => 'Home page of application',
                 'route' => 'home',
+                'order' => 1,
             ],
             [
                 'label' => 'Album',
                 'title' => 'List of all albums',
                 'route' => 'album',
+                'order' => 2,
                 'pages' => [
                     [
                         'label' => 'Add',
@@ -98,6 +100,7 @@ return [
                 'label' => 'Album(Doc)',
                 'title' => 'List of all albums',
                 'route' => 'album-doctrine',
+                'order' => 5,
                 'pages' => [
                     [
                         'label' => 'Add',
@@ -123,6 +126,7 @@ return [
                 'label' => 'Word',
                 'Title' => 'Download word template',
                 'route' => 'word',
+                'order' => 4,
             ],
         ],
     ],
